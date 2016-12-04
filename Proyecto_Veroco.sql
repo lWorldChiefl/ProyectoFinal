@@ -4,7 +4,7 @@ Use Proyecto_Veroco
 							/*LOGIN*/
 
 	/*Creamos la Tabla TiposUsuarios*/
-Create Table Tipo_Usuarios
+Create Table Tipos_Usuarios
 (
 	userTypeId int primary key identity,
 	userTypeDescription varchar(100)
@@ -20,7 +20,7 @@ Create Table Usuarios
 	userEmail varchar(120),
 	userPassword varchar(16),
 	userTypeId int,
-	foreign key (userTypeId) references Tipo_Usuarios(userTypeId)
+	foreign key (userTypeId) references Tipos_Usuarios(userTypeId)
 );
 GO
 	
@@ -63,7 +63,7 @@ GO
 Create Table Facturas
 (
 	invoiceId int primary key identity,
-	invoiceDate date, #YYYY-MM-DD
+	invoiceDate date, /*YYYY-MM-DD*/
 	detailsId int,
 	userId int,
 	foreign key (userId) references Usuarios(userId),
