@@ -34,6 +34,7 @@ Create Table Categorias
 	categoryName varchar(60),
 	categoryDescription varchar(180)
 );
+GO
 
 	/*Creamos la tabla Productos*/
 Create Table Productos
@@ -45,6 +46,7 @@ Create Table Productos
 	categoryId int,
 	foreign key (categoryId) references Categorias(categoryId)
 );
+GO
 
 	/*Creamos la tabla Detalles*/
 Create Table Detalles
@@ -55,6 +57,7 @@ Create Table Detalles
 	detailsPrice int
 	foreign key (productId) references Productos(productId)
 );
+GO
 
 	/*Creamos la tabla Facturas*/
 Create Table Facturas
@@ -66,3 +69,4 @@ Create Table Facturas
 	foreign key (userId) references Usuarios(userId),
 	foreign key (detailsId) references Detalles(detailsId)
 );
+GO
