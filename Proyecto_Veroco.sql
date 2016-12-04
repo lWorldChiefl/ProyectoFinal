@@ -11,7 +11,7 @@ Create Table Usuarios
 	userPassword varchar(16),
 	userType int
 );
-
+GO
 	/*Creamos la Tabla TiposUsuarios*/
 
 Create Table Tipo_Usuarios
@@ -19,3 +19,4 @@ Create Table Tipo_Usuarios
 	userTypeId int primary key identity,
 	userTypeDescription varchar(100)
 );
+GO
