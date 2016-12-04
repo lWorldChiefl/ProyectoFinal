@@ -63,7 +63,7 @@ GO
 Create Table Facturas
 (
 	invoiceId int primary key identity,
-	invoiceDate date,
+	invoiceDate date, #YYYY-MM-DD
 	detailsId int,
 	userId int,
 	foreign key (userId) references Usuarios(userId),
