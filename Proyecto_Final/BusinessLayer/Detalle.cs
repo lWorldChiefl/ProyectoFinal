@@ -7,22 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DataLayer
+namespace BusinessLayer
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Categoria
+    public partial class Detalle
     {
-        public Categoria()
+        public Detalle()
         {
-            this.Productos = new HashSet<Producto>();
+            this.Facturas = new HashSet<Factura>();
         }
     
-        public int categoryId { get; set; }
-        public string categoryName { get; set; }
-        public string categoryDescription { get; set; }
+        public int detailsId { get; set; }
+        public Nullable<int> productId { get; set; }
+        public Nullable<int> detailsQuantity { get; set; }
+        public Nullable<int> detailsPrice { get; set; }
     
-        public virtual ICollection<Producto> Productos { get; set; }
+        public virtual Producto Producto { get; set; }
+        public virtual ICollection<Factura> Facturas { get; set; }
     }
 }

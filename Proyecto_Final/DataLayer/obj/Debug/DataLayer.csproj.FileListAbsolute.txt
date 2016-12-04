@@ -9,3 +9,4 @@ C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\DataLayer\bin\Debug\e
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\DataLayer\bin\Debug\es\EntityFramework.SqlServer.resources.dll
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\DataLayer\obj\Debug\DataLayer.dll
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\DataLayer\obj\Debug\DataLayer.pdb
+C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache

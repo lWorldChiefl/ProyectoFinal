@@ -39,7 +39,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Categoria.cs">
+      <DependentUpon>VerocoModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Detalle.cs">
+      <DependentUpon>VerocoModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Factura.cs">
+      <DependentUpon>VerocoModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Producto.cs">
+      <DependentUpon>VerocoModelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tipos_Usuarios.cs">
+      <DependentUpon>VerocoModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs">
+      <DependentUpon>VerocoModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VerocoModelo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VerocoModelo.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="VerocoModelo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>VerocoModelo.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

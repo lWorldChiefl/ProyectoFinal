@@ -7,25 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DataLayer
+namespace BusinessLayer
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Usuario
+    public partial class Tipos_Usuarios
     {
-        public Usuario()
+        public Tipos_Usuarios()
         {
-            this.Facturas = new HashSet<Factura>();
+            this.Usuarios = new HashSet<Usuario>();
         }
     
-        public int userId { get; set; }
-        public string userName { get; set; }
-        public string userEmail { get; set; }
-        public string userPassword { get; set; }
-        public Nullable<int> userTypeId { get; set; }
+        public int userTypeId { get; set; }
+        public string userTypeDescription { get; set; }
     
-        public virtual ICollection<Factura> Facturas { get; set; }
-        public virtual Tipos_Usuarios Tipos_Usuarios { get; set; }
+        public virtual ICollection<Usuario> Usuarios { get; set; }
     }
 }
