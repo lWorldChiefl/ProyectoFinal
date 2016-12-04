@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6aefaea471c0415db9016be3c09dc1ca" Name="Diagram1">
+        <EntityTypeShape EntityType="Proyecto_VerocoModel.Categoria" Width="1.5" PointX="1.5" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proyecto_VerocoModel.Detalle" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proyecto_VerocoModel.Factura" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proyecto_VerocoModel.Producto" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proyecto_VerocoModel.Tipos_Usuarios" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proyecto_VerocoModel.Usuario" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="Proyecto_VerocoModel.FK__Productos__categ__173876EA" ManuallyRouted="false" />
+        <AssociationConnector Association="Proyecto_VerocoModel.FK__Detalles__detail__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="Proyecto_VerocoModel.FK__Facturas__detail__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="Proyecto_VerocoModel.FK__Facturas__userId__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="Proyecto_VerocoModel.FK__Usuarios__userTy__1273C1CD" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
