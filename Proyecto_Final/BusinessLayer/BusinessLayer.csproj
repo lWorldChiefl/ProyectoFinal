@@ -48,6 +48,7 @@
     <Compile Include="Factura.cs">
       <DependentUpon>VerocoModelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="IRepository.cs" />
     <Compile Include="Producto.cs">
       <DependentUpon>VerocoModelo.tt</DependentUpon>
     </Compile>
@@ -72,12 +73,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Repository\Repository.csproj">
-      <Project>{397fff97-4b80-48d6-b901-9981d2e2ef0d}</Project>
-      <Name>Repository</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

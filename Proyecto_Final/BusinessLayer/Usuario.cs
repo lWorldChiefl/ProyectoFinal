@@ -7,7 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Repository;
 
 namespace BusinessLayer
 {
