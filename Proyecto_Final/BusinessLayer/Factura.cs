@@ -7,12 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Repository;
+
 namespace BusinessLayer
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Factura
+
+    public partial class Factura : IEntity
     {
         public int invoiceId { get; set; }
         public Nullable<System.DateTime> invoiceDate { get; set; }

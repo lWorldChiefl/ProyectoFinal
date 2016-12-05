@@ -7,12 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Repository;
+
 namespace BusinessLayer
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Categoria
+
+    public partial class Categoria : IEntity
     {
         public Categoria()
         {
