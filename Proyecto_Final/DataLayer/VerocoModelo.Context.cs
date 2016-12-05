@@ -12,6 +12,7 @@ namespace DataLayer
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using BusinessLayer;
     
     public partial class Proyecto_VerocoEntities : DbContext
     {
