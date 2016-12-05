@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataLayer;
 
 namespace BusinessLayer
 {
@@ -20,47 +21,47 @@ namespace BusinessLayer
         T Buscar(int Id);
     }
 
-    public class AuthorRepository : IRepository<Usuario>
+    public class UsuariosRepository : IRepository<Usuario>
     {
 
-        Model1 _authorContext;
+        Proyecto_VerocoEntities _userContext;
 
-        public AuthorRepository()
+        public UsuariosRepository()
         {
-            _authorContext = new Model1();
+            _userContext = new Proyecto_VerocoEntities();
 
         }
-        public IEnumerable<Author> List
+        public IEnumerable<Usuario> Listar
         {
             get
             {
-                return _authorContext.Authors;
+                return _userContext.Usuarios;
             }
 
         }
 
-        public void Add(Author entity)
+        public void Crear(Usuario entity)
         {
-            _authorContext.Authors.Add(entity);
-            _authorContext.SaveChanges();
+            _userContext.Usuarios.Add(entity);
+            _userContext.SaveChanges();
         }
 
-        public void Delete(Author entity)
+        public void Delete(Usuario entity)
         {
-            _authorContext.Authors.Remove(entity);
-            _authorContext.SaveChanges();
+            _userContext.Usuarios.Remove(entity);
+            _userContext.SaveChanges();
         }
 
-        public void Update(Author entity)
+        public void Eliminar(Usuario entity)
         {
-            _authorContext.Entry(entity).State = System.Data.Entity.EntityState.Modified;
-            _authorContext.SaveChanges();
+            _userContext.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+            _userContext.SaveChanges();
 
         }
 
-        public Author FindById(int Id)
+        public Usuario Buscar(int Id)
         {
-            var result = (from r in _authorContext.Authors where r.Id == Id select r).FirstOrDefault();
+            var result = (from r in _userContext.Usuarios where r.userId == Id select r).FirstOrDefault();
             return result;
         }
 
