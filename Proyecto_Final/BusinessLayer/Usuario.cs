@@ -27,7 +27,7 @@ namespace BusinessLayer
         public string userName { get; set; }
         [Required(ErrorMessage = "El correo no puede estar vacio")]
         public string userEmail { get; set; }
-        [Required(ErrorMessage = "La contraseña no puede estar vacio")]
+        [Required(ErrorMessage = "La contraseña no puede estar vacia")]
         public string userPassword { get; set; }
         public Nullable<int> userTypeId { get; set; }
     

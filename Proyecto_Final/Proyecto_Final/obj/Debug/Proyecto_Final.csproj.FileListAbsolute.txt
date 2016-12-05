@@ -2,6 +2,8 @@ C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\Pr
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\Proyecto_Final.dll
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\Proyecto_Final.pdb
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\Antlr3.Runtime.dll
+C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\BusinessLayer.dll
+C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\DataLayer.dll
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\EntityFramework.dll
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\EntityFramework.SqlServer.dll
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\Microsoft.AspNet.Identity.Core.dll
@@ -27,6 +29,8 @@ C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\Sy
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\System.Web.WebPages.dll
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\System.Web.WebPages.Razor.dll
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\WebGrease.dll
+C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\BusinessLayer.pdb
+C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\DataLayer.pdb
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\System.Web.Helpers.xml
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\System.Web.Mvc.xml
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\System.Web.Optimization.xml
@@ -69,10 +73,6 @@ C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\es
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\es\Microsoft.Owin.Security.Google.resources.dll
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\obj\Debug\Proyecto_Final.csprojResolveAssemblyReference.cache
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\obj\Debug\Proyecto_Final.dll
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\obj\Debug\Proyecto_Final.pdb
-C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\obj\Debug\Proyecto_Final.csprojResolveAssemblyReference.cache
-C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\BusinessLayer.dll
-C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\DataLayer.dll
-C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\BusinessLayer.pdb
-C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\DataLayer.pdb

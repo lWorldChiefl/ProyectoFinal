@@ -10,6 +10,9 @@ namespace Proyecto_Final.Controllers
 {
     public class VerocoController : Controller
     {
+        UsuariosRepository userRe = new UsuariosRepository();
+        Proyecto_VerocoEntities db = new Proyecto_VerocoEntities();
+
         public ActionResult Index()
         {
             return View();
@@ -20,6 +23,36 @@ namespace Proyecto_Final.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Login(Usuario user)
+        {
+            using (db)
+            {
+                var usr = db.Usuarios.Single(u => u.userName == user.userName && u.userPassword == user.userPassword);
+                if (user != null)
+                {
+                    Session["userId"] = user.userId.ToString();
+                    Session["userName"] = user.userName.ToString();
+                    Session["userTypeId"] = user.userTypeId.ToString();
+                    return RedirectToAction("LoggedIn");
+                }
+                else
+                {
+                    ModelState.AddModelError("","Username or Password is wrong");
+                }
+            }            
+            return View();
+        }
+
+        public ActionResult LoggedId()
+        {
+            if (Session["userId"] != null)
+            {
+                return View();
+            }
+            return RedirectToAction("Login");
+        }
+
         public ActionResult Registrarse()
         {
             return View();
@@ -28,7 +61,6 @@ namespace Proyecto_Final.Controllers
         [HttpPost]
         public ActionResult Registrarse(Usuario user)
         {
-            UsuariosRepository userRe = new UsuariosRepository();
             userRe.Crear(user);
             ModelState.Clear();
             ViewBag.Message = user.userName + " registrado satisfactoriamente";
