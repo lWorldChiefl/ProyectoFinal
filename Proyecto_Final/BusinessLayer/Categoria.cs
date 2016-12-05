@@ -12,6 +12,7 @@ namespace BusinessLayer
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public partial class Categoria
     {
@@ -20,6 +21,7 @@ namespace BusinessLayer
             this.Productos = new HashSet<Producto>();
         }
     
+        [Key]
         public int categoryId { get; set; }
         public string categoryName { get; set; }
         public string categoryDescription { get; set; }

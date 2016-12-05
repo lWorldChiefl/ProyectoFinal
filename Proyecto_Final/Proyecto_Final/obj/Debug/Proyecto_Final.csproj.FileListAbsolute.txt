@@ -71,3 +71,4 @@ C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\es
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\obj\Debug\Proyecto_Final.dll
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\obj\Debug\Proyecto_Final.pdb
+C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\Proyecto_Final\obj\Debug\Proyecto_Final.csprojResolveAssemblyReference.cache

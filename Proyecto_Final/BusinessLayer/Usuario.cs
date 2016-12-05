@@ -21,12 +21,13 @@ namespace BusinessLayer
             this.Facturas = new HashSet<Factura>();
         }
     
+        [Key]
         public int userId { get; set; }
-        [Required]
+        [Required(ErrorMessage = "El nombre de usuario no puede estar vacio")]
         public string userName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "El correo no puede estar vacio")]
         public string userEmail { get; set; }
-        [Required]
+        [Required(ErrorMessage = "La contraseña no puede estar vacio")]
         public string userPassword { get; set; }
         public Nullable<int> userTypeId { get; set; }
     

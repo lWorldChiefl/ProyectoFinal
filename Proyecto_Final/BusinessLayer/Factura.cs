@@ -12,9 +12,11 @@ namespace BusinessLayer
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public partial class Factura
     {
+        [Key]
         public int invoiceId { get; set; }
         public Nullable<System.DateTime> invoiceDate { get; set; }
         public Nullable<int> detailsId { get; set; }

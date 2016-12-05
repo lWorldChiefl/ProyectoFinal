@@ -11,6 +11,7 @@ namespace BusinessLayer
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public partial class Detalle
     {
@@ -19,6 +20,7 @@ namespace BusinessLayer
             this.Facturas = new HashSet<Factura>();
         }
     
+        [Key]
         public int detailsId { get; set; }
         public Nullable<int> productId { get; set; }
         public Nullable<int> detailsQuantity { get; set; }

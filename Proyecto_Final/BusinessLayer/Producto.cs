@@ -21,14 +21,14 @@ namespace BusinessLayer
             this.Detalles = new HashSet<Detalle>();
         }
     
+        [Key]
         public int productId { get; set; }
-        [Required]
+        [Required(ErrorMessage = "El nombre del producto no puede estar vacio")]
         public string productName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "El precio del producto no puede estar vacio")]
         public Nullable<int> productPrice { get; set; }
-        [Required]
+        [Required(ErrorMessage = "El stock del producto no puede estar vacio")]
         public Nullable<int> productStock { get; set; }
-        [Required]
         public Nullable<int> categoryId { get; set; }
         public virtual Categoria Categoria { get; set; }
         public virtual ICollection<Detalle> Detalles { get; set; }
