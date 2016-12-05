@@ -12,6 +12,7 @@ namespace BusinessLayer
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public partial class Usuario : IEntity
     {
@@ -21,8 +22,11 @@ namespace BusinessLayer
         }
     
         public int userId { get; set; }
+        [Required]
         public string userName { get; set; }
+        [Required]
         public string userEmail { get; set; }
+        [Required]
         public string userPassword { get; set; }
         public Nullable<int> userTypeId { get; set; }
     

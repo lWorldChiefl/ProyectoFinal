@@ -30,7 +30,6 @@ namespace BusinessLayer
         public Nullable<int> productStock { get; set; }
         [Required]
         public Nullable<int> categoryId { get; set; }
-    
         public virtual Categoria Categoria { get; set; }
         public virtual ICollection<Detalle> Detalles { get; set; }
     }
