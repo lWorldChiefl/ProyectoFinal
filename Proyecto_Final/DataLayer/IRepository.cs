@@ -7,12 +7,8 @@ using DataLayer;
 
 namespace BusinessLayer
 {
-    public class IEntity
-    {
-        public string Id;
-    }
 
-    public interface IRepository<T> where T : IEntity
+    public interface IRepository<T> where T : class
     {
         IEnumerable<T> Listar { get; }
         void Crear(T entity);
@@ -46,13 +42,13 @@ namespace BusinessLayer
             _userContext.SaveChanges();
         }
 
-        public void Delete(Usuario entity)
+        public void Eliminar(Usuario entity)
         {
             _userContext.Usuarios.Remove(entity);
             _userContext.SaveChanges();
         }
 
-        public void Eliminar(Usuario entity)
+        public void Actualizar(Usuario entity)
         {
             _userContext.Entry(entity).State = System.Data.Entity.EntityState.Modified;
             _userContext.SaveChanges();

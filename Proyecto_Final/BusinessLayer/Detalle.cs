@@ -12,7 +12,7 @@ namespace BusinessLayer
     using System;
     using System.Collections.Generic;
 
-    public partial class Detalle : IEntity
+    public partial class Detalle
     {
         public Detalle()
         {

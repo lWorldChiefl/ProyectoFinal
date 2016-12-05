@@ -13,7 +13,7 @@ namespace BusinessLayer
     using System;
     using System.Collections.Generic;
 
-    public partial class Categoria : IEntity
+    public partial class Categoria
     {
         public Categoria()
         {

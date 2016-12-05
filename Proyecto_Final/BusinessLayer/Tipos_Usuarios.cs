@@ -7,13 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
 namespace BusinessLayer
 {
     using System;
     using System.Collections.Generic;
 
-    public partial class Tipos_Usuarios : IEntity
+    public partial class Tipos_Usuarios
     {
         public Tipos_Usuarios()
         {

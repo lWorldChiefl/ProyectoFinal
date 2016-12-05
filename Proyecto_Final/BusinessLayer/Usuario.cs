@@ -14,7 +14,7 @@ namespace BusinessLayer
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public partial class Usuario : IEntity
+    public partial class Usuario
     {
         public Usuario()
         {
