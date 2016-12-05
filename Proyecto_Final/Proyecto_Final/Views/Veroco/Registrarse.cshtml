@@ -18,7 +18,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.userName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.userName, new { @class = "form-control" })
+                @Html.TextBoxFor(model => model.userName, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.userName)
             </div>
         </div>
@@ -26,7 +26,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.userEmail, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.userEmail)
+                @Html.TextBoxFor(model => model.userEmail, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.userEmail)
             </div>
         </div>
@@ -34,7 +34,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.userPassword, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.userPassword)
+                @Html.TextBoxFor(model => model.userPassword, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.userPassword)
             </div>
         </div>
@@ -50,7 +50,7 @@
                     },
                   "value",
                   "text",
-                   2))
+                   2), new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.userTypeId)
             </div>
         </div>
