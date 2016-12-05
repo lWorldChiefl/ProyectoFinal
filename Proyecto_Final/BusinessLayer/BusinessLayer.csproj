@@ -49,7 +49,6 @@
     <Compile Include="Factura.cs">
       <DependentUpon>VerocoModelo.tt</DependentUpon>
     </Compile>
-    <Compile Include="IRepository.cs" />
     <Compile Include="Producto.cs">
       <DependentUpon>VerocoModelo.tt</DependentUpon>
     </Compile>
