@@ -12,6 +12,7 @@ namespace BusinessLayer
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public partial class Producto : IEntity
     {
@@ -21,9 +22,13 @@ namespace BusinessLayer
         }
     
         public int productId { get; set; }
+        [Required]
         public string productName { get; set; }
+        [Required]
         public Nullable<int> productPrice { get; set; }
+        [Required]
         public Nullable<int> productStock { get; set; }
+        [Required]
         public Nullable<int> categoryId { get; set; }
     
         public virtual Categoria Categoria { get; set; }
