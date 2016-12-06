@@ -213,9 +213,9 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Veroco\Login.cshtml" />
     <Content Include="Views\Veroco\Index.cshtml" />
     <Content Include="Views\Veroco\Registrarse.cshtml" />
+    <Content Include="Views\Veroco\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
