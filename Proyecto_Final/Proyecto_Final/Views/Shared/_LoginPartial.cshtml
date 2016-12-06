@@ -5,7 +5,7 @@
     @Html.AntiForgeryToken()
     <ul class="nav navbar-nav navbar-right">
         <li>
-            @Html.ActionLink("Hola " + Session["userName"].ToString() + "!", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Administrar" })
+            @Html.ActionLink(Session["userName"].ToString(), "", "Account", routeValues: null, htmlAttributes: new { title = "Administrar" })
         </li>
         <li>
             @Html.ActionLink("Cerrar Sesión", "LogOff", "Veroco", routeValues: null, htmlAttributes: new { title = "Administrar" })
