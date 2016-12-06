@@ -28,13 +28,13 @@ namespace Proyecto_Final.Controllers
         {
             using (db)
             {
-                var usr = db.Usuarios.Single(u => u.userName == user.userName && u.userPassword == user.userPassword);
+                var usr = db.Usuarios.Where(u => u.userName == user.userName && u.userPassword == user.userPassword).FirstOrDefault();
                 if (user != null)
                 {
                     Session["userId"] = user.userId.ToString();
                     Session["userName"] = user.userName.ToString();
                     Session["userTypeId"] = user.userTypeId.ToString();
-                    return RedirectToAction("LoggedIn");
+                    return RedirectToAction("Logged");
                 }
                 else
                 {
@@ -44,7 +44,7 @@ namespace Proyecto_Final.Controllers
             return View();
         }
 
-        public ActionResult LoggedId()
+        public ActionResult Logged()
         {
             if (Session["userId"] != null)
             {

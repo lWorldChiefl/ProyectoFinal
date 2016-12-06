@@ -27,7 +27,7 @@
         <div class="form-group">
             @Html.Label("Contraseña", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.userPassword, new { @class = "form-control" })
+                @Html.PasswordFor(model => model.userPassword, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.userPassword)
             </div>
         </div>
