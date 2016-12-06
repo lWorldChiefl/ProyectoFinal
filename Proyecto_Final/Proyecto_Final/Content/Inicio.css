@@ -3,7 +3,7 @@
 }
 
 .background-image {
-  background-image: url('http://frutas.consumer.es/sites/default/files/compra_0.jpg');
+  background-color:#f9f9f9;
   background-size: cover;
   display: block;
   filter: blur(20px);
@@ -31,5 +31,3 @@
   padding: 0 10px;
   text-align: center;
 }
-
-.content .
