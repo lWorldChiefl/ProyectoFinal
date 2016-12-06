@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using DataLayer;
 using BusinessLayer;
+using Microsoft.Owin.Security;
 
 namespace Proyecto_Final.Controllers
 {
@@ -51,6 +52,12 @@ namespace Proyecto_Final.Controllers
                 return View();
             }
             return RedirectToAction("Login");
+        }
+
+        public ActionResult LogOff()
+        {
+            Session.Clear();
+            return RedirectToAction("Index", "Veroco");
         }
 
         public ActionResult Registrarse()
