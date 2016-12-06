@@ -12,7 +12,8 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                    @Html.ActionLink("Configurar", "Index", "Account", routeValues: null, htmlAttributes: new { title = "Index" })
+
+                    @Html.ActionLink("Configurar", "Configurar", "Account", new { id = Session["userId"] }, htmlAttributes: new { title = "Index" })
                 </li>
                 <li>
                     @Html.ActionLink("Cerrar Sesión", "LogOff", "Veroco", routeValues: null, htmlAttributes: new { title = "Cerrar Sesión" })

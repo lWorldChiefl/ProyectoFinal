@@ -52,7 +52,6 @@ namespace BusinessLayer
         {
             _userContext.Entry(entity).State = System.Data.Entity.EntityState.Modified;
             _userContext.SaveChanges();
-
         }
 
         public Usuario Buscar(int Id)

@@ -30,11 +30,11 @@ namespace Proyecto_Final.Controllers
             using (db)
             {
                 var usr = db.Usuarios.Where(u => u.userName == user.userName && u.userPassword == user.userPassword).FirstOrDefault();
-                if (user != null)
+                if (usr != null)
                 {
-                    Session["userId"] = user.userId.ToString();
-                    Session["userName"] = user.userName.ToString();
-                    Session["userTypeId"] = user.userTypeId.ToString();
+                    Session["userId"] = usr.userId;
+                    Session["userName"] = usr.userName.ToString();
+                    Session["userTypeId"] = usr.userTypeId;
                     return RedirectToAction("Index","Account");
                 }
                 else
