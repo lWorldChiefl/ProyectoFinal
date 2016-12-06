@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <title>@ViewBag.Title - Veroco</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -18,11 +18,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Veroco", "Index", "Veroco", null, new { @class = "navbar-brand" })
+                @if (Session["userId"] != null)
+                {
+                    @Html.ActionLink("Veroco", "Index", "Account", null, new { @class = "navbar-brand" })
+                }
+                else
+                { 
+                    @Html.ActionLink("Veroco", "Index", "Veroco", null, new { @class = "navbar-brand" })
+                }                    
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Veroco")</li>
+                    <li>@if (Session["userId"] != null)
+                    {
+                        @Html.ActionLink("Inicio", "Index", "Account")
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Inicio", "Index", "Veroco")
+                    }            
+                    </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -32,7 +47,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year - Los Productos del Hogar</p>
         </footer>
     </div>
 

@@ -35,23 +35,14 @@ namespace Proyecto_Final.Controllers
                     Session["userId"] = user.userId.ToString();
                     Session["userName"] = user.userName.ToString();
                     Session["userTypeId"] = user.userTypeId.ToString();
-                    return RedirectToAction("Logged");
+                    return RedirectToAction("Index","Account");
                 }
                 else
                 {
-                    ModelState.AddModelError("","Username or Password is wrong");
+                    ModelState.AddModelError("","Usuario or Password incorrecta");
                 }
             }            
             return View();
-        }
-
-        public ActionResult Logged()
-        {
-            if (Session["userId"] != null)
-            {
-                return View();
-            }
-            return RedirectToAction("Login");
         }
 
         public ActionResult LogOff()

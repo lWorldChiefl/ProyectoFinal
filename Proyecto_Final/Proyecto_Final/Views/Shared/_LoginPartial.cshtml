@@ -3,12 +3,21 @@
 {
     
     @Html.AntiForgeryToken()
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink(Session["userName"].ToString(), "", "Account", routeValues: null, htmlAttributes: new { title = "Administrar" })
-        </li>
-        <li>
-            @Html.ActionLink("Cerrar Sesión", "LogOff", "Veroco", routeValues: null, htmlAttributes: new { title = "Administrar" })
+    <ul class="nav navbar-right">
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                Account
+                <span class="caret">
+                </span>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    @Html.ActionLink(Session["userName"].ToString(), "Index", "Account", routeValues: null, htmlAttributes: new { title = "Index" })
+                </li>
+                <li>
+                    @Html.ActionLink("Cerrar Sesión", "LogOff", "Veroco", routeValues: null, htmlAttributes: new { title = "Cerrar Sesión" })
+                </li>
+            </ul>
         </li>
     </ul>
 }
