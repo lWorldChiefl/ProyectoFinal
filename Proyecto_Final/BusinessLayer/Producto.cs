@@ -7,29 +7,30 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
 namespace BusinessLayer
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Producto
     {
         public Producto()
         {
             this.Detalles = new HashSet<Detalle>();
         }
-    
+
         [Key]
         public int productId { get; set; }
-        [Required(ErrorMessage = "El nombre del producto no puede estar vacio")]
+        [Required(ErrorMessage = "Nombre Invalido")]
         public string productName { get; set; }
-        [Required(ErrorMessage = "El precio del producto no puede estar vacio")]
+        [Required(ErrorMessage = "Precio Invalido")]
         public Nullable<int> productPrice { get; set; }
-        [Required(ErrorMessage = "El stock del producto no puede estar vacio")]
+        [Required(ErrorMessage = "Stock Invalido")]
         public Nullable<int> productStock { get; set; }
         public Nullable<int> categoryId { get; set; }
+        public string productImage { get; set; }
+    
         public virtual Categoria Categoria { get; set; }
         public virtual ICollection<Detalle> Detalles { get; set; }
     }

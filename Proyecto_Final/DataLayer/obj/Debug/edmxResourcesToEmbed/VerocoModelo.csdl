@@ -42,6 +42,7 @@
     <Property Name="categoryId" Type="Int32" />
     <NavigationProperty Name="Categoria" Relationship="Self.FK__Productos__categ__173876EA" FromRole="Productos" ToRole="Categorias" />
     <NavigationProperty Name="Detalles" Relationship="Self.FK__Detalles__detail__1A14E395" FromRole="Productos" ToRole="Detalles" />
+    <Property Name="productImage" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Tipos_Usuarios">
     <Key>

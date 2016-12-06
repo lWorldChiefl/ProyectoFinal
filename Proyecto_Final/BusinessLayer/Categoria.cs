@@ -7,20 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
 namespace BusinessLayer
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Categoria
     {
         public Categoria()
         {
             this.Productos = new HashSet<Producto>();
         }
-    
+
         [Key]
         public int categoryId { get; set; }
         public string categoryName { get; set; }

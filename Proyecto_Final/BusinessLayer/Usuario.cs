@@ -7,27 +7,26 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
 namespace BusinessLayer
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Usuario
     {
         public Usuario()
         {
             this.Facturas = new HashSet<Factura>();
         }
-    
+
         [Key]
         public int userId { get; set; }
-        [Required(ErrorMessage = "El nombre de usuario no puede estar vacio")]
+        [Required(ErrorMessage = "Nombre Invalido")]
         public string userName { get; set; }
-        [Required(ErrorMessage = "El correo no puede estar vacio")]
+        [Required(ErrorMessage = "Email Invalido")]
         public string userEmail { get; set; }
-        [Required(ErrorMessage = "La contraseña no puede estar vacia")]
+        [Required(ErrorMessage = "Password Invalido")]
         public string userPassword { get; set; }
         public Nullable<int> userTypeId { get; set; }
     

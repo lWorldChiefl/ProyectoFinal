@@ -33,6 +33,7 @@
     <EntitySetMapping Name="Productos">
       <EntityTypeMapping TypeName="Proyecto_VerocoModel.Producto">
         <MappingFragment StoreEntitySet="Productos">
+          <ScalarProperty Name="productImage" ColumnName="productImage" />
           <ScalarProperty Name="productId" ColumnName="productId" />
           <ScalarProperty Name="productName" ColumnName="productName" />
           <ScalarProperty Name="productPrice" ColumnName="productPrice" />

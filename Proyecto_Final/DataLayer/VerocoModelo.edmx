@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Proyecto_VerocoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Proyecto_VerocoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Categorias">
           <Key>
             <PropertyRef Name="categoryId" />
@@ -40,6 +40,7 @@
           <Property Name="productPrice" Type="int" />
           <Property Name="productStock" Type="int" />
           <Property Name="categoryId" Type="int" />
+          <Property Name="productImage" Type="varchar" MaxLength="120" />
         </EntityType>
         <EntityType Name="Tipos_Usuarios">
           <Key>
@@ -146,8 +147,7 @@
             <End Role="Usuarios" EntitySet="Usuarios" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Proyecto_VerocoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -193,6 +193,7 @@
           <Property Name="categoryId" Type="Int32" />
           <NavigationProperty Name="Categoria" Relationship="Self.FK__Productos__categ__173876EA" FromRole="Productos" ToRole="Categorias" />
           <NavigationProperty Name="Detalles" Relationship="Self.FK__Detalles__detail__1A14E395" FromRole="Productos" ToRole="Detalles" />
+          <Property Name="productImage" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Tipos_Usuarios">
           <Key>
@@ -340,6 +341,7 @@
           <EntitySetMapping Name="Productos">
             <EntityTypeMapping TypeName="Proyecto_VerocoModel.Producto">
               <MappingFragment StoreEntitySet="Productos">
+                <ScalarProperty Name="productImage" ColumnName="productImage" />
                 <ScalarProperty Name="productId" ColumnName="productId" />
                 <ScalarProperty Name="productName" ColumnName="productName" />
                 <ScalarProperty Name="productPrice" ColumnName="productPrice" />
