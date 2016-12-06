@@ -6,13 +6,13 @@
     <ul class="nav navbar-right">
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                Account
+                @Session["userName"].ToString()
                 <span class="caret">
                 </span>
             </a>
             <ul class="dropdown-menu">
                 <li>
-                    @Html.ActionLink(Session["userName"].ToString(), "Index", "Account", routeValues: null, htmlAttributes: new { title = "Index" })
+                    @Html.ActionLink("Configurar", "Index", "Account", routeValues: null, htmlAttributes: new { title = "Index" })
                 </li>
                 <li>
                     @Html.ActionLink("Cerrar Sesión", "LogOff", "Veroco", routeValues: null, htmlAttributes: new { title = "Cerrar Sesión" })
