@@ -16,7 +16,7 @@
         <hr />
         @Html.ValidationSummary(true)
         <div class="form-group">
-            @Html.LabelFor(model => model.userName, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Nombre", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.TextBoxFor(model => model.userName, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.userName)
@@ -24,7 +24,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.userEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Email", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.TextBoxFor(model => model.userEmail, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.userEmail)
@@ -32,15 +32,15 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.userPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Contraseña", htmlAttributes: new { @class = "control-label col-md-2" , })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.userPassword, new { @class = "form-control" })
+                @Html.PasswordFor(model => model.userPassword, new { @class = "form-control"})
                 @Html.ValidationMessageFor(model => model.userPassword)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.userTypeId, "userTypeId", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Tipo de Usuario", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownListFor(model => model.userTypeId, new SelectList(
                   new List<Object>{
@@ -57,12 +57,8 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Registrar" class="btn btn-success" />
+                <input type="submit" value="Registrarse" class="btn btn-success" />
             </div>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
