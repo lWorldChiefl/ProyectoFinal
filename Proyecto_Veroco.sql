@@ -43,6 +43,7 @@ Create Table Productos
 	productName varchar(60),
 	productPrice int,
 	productStock int,
+	productImage varchar(120),
 	categoryId int,
 	foreign key (categoryId) references Categorias(categoryId)
 );
