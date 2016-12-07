@@ -8,3 +8,37 @@
 
 <h2>Index</h2>
 
+@section Scripts {
+    <script type="text/javaScript">
+    var testVar = "test";
+    $(document).ready(function () {
+        var ulEmployees = $('#ulEmployees');
+        $.ajax({
+            type: 'GET',
+            url: "http://localhost:80/Api/Veroco/",
+            dataType: 'json',
+            success: function (data) {
+                ulEmployees.empty();
+                $.each(data, function (index, val) {
+                    var productName = val.productName;
+                    var productPrice = val.productPrice;
+                    var productStock = val.productPrice;
+                    @**@var urlcompleta = "@Url.Content(testVar)"*@
+                    ulEmployees.append('<div> ' + productName+ ' ' + productPrice+ ' ' + productStock+ '</div>');
+                });
+            }
+        });
+    });
+</script>
+
+}
+
+
+
+<div class="container">
+    <h2 class="text-center">Productos</h2>
+    <div class="lightbox-gallery">
+        <ul id="ulEmployees" />
+        
+    </div>
+</div>
