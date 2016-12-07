@@ -221,6 +221,8 @@
     <Content Include="Views\Account\Usuarios.cshtml" />
     <Content Include="Views\Productos\Productos.cshtml" />
     <Content Include="Views\Productos\Crear.cshtml" />
+    <Content Include="Views\Productos\Editar.cshtml" />
+    <Content Include="Views\Productos\Eliminar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

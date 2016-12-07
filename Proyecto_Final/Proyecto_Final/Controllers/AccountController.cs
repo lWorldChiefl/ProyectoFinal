@@ -65,7 +65,7 @@ namespace Proyecto_Final.Controllers
         {
             Usuario usuario = db.Usuarios.Find(id);
             userRe.Eliminar(usuario);
-            return RedirectToAction("Index");
+            return RedirectToAction("Usuarios");
         }
 
         public ActionResult Usuarios()

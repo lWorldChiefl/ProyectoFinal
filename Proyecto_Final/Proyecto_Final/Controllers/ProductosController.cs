@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -49,6 +50,53 @@ namespace Proyecto_Final.Controllers
 
             db.Productos.Add(ImagenCompleta.Producto);
             db.SaveChanges();
+            return RedirectToAction("Productos");
+        }
+
+        public ActionResult Editar(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Producto producto = db.Productos.Find(id);
+            if (producto == null)
+            {
+                return HttpNotFound();
+            }
+            return View(producto);
+        }
+
+        [HttpPost]
+        public ActionResult Editar(Producto producto)
+        {
+            if (ModelState.IsValid)
+            {
+                proRe.Actualizar(producto);
+                return RedirectToAction("Productos");
+            }
+            return View();
+        }
+
+        public ActionResult Eliminar(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Producto producto = db.Productos.Find(id);
+            if (producto == null)
+            {
+                return HttpNotFound();
+            }
+            return View(producto);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult Eliminar(int id)
+        {
+            Producto producto = db.Productos.Find(id);
+            proRe.Eliminar(producto);
             return RedirectToAction("Productos");
         }
     }
