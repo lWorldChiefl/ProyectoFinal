@@ -2,4 +2,3 @@ C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\BusinessLayer\bin\Deb
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\BusinessLayer\bin\Debug\BusinessLayer.pdb
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\BusinessLayer\obj\Debug\BusinessLayer.dll
 C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\BusinessLayer\obj\Debug\BusinessLayer.pdb
-C:\Users\Sky\Documents\GitHub\ProyectoFinal\Proyecto_Final\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
