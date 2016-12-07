@@ -44,12 +44,12 @@ namespace Proyecto_Final.Controllers
                 var fileName = Path.GetFileName(ImagenCompleta.Imagen.ImageUpload.FileName);
                 var path = Path.Combine(Server.MapPath("~/Content/image"), fileName);
                 ImagenCompleta.Imagen.ImageUpload.SaveAs(path);
-                ImagenCompleta.Producto.productImage = path;
+                ImagenCompleta.Producto.productImage = "~/Content/image/" + fileName;
             }
 
             db.Productos.Add(ImagenCompleta.Producto);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Productos");
         }
     }
 }

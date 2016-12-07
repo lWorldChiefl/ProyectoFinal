@@ -176,17 +176,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\image\1.jpg" />
-    <Content Include="Content\image\2.jpg" />
-    <Content Include="Content\image\3.jpg" />
-    <Content Include="Content\image\4.jpg" />
-    <Content Include="Content\image\5.jpg" />
-    <Content Include="Content\image\6.jpg" />
-    <Content Include="Content\image\7.jpg" />
-    <Content Include="Content\image\8.jpg" />
-    <Content Include="Content\image\9.jpg" />
-    <Content Include="Content\image\image.jpg" />
-    <Content Include="Content\image\Logo.jpg" />
+    <Content Include="Content\image\*.*" />
     <Content Include="Content\Inicio.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -266,7 +256,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>29057</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
@@ -280,6 +270,16 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Content Include="**\*.jpg" />
+    </ItemGroup>
+  </Target>
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <Content Include="**\*.jpg" />
+    </ItemGroup>
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
