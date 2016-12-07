@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Proyecto_VerocoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Categorias">
+    <Key>
+      <PropertyRef Name="categoryId" />
+    </Key>
+    <Property Name="categoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="categoryName" Type="varchar" MaxLength="60" />
+    <Property Name="categoryDescription" Type="varchar" MaxLength="180" />
+  </EntityType>
+  <EntityType Name="Detalles">
+    <Key>
+      <PropertyRef Name="detailsId" />
+    </Key>
+    <Property Name="detailsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="productId" Type="int" />
+    <Property Name="detailsQuantity" Type="int" />
+    <Property Name="detailsPrice" Type="int" />
+  </EntityType>
+  <EntityType Name="Facturas">
+    <Key>
+      <PropertyRef Name="invoiceId" />
+    </Key>
+    <Property Name="invoiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="invoiceDate" Type="date" />
+    <Property Name="detailsId" Type="int" />
+    <Property Name="userId" Type="int" />
+  </EntityType>
+  <EntityType Name="Productos">
+    <Key>
+      <PropertyRef Name="productId" />
+    </Key>
+    <Property Name="productId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="productName" Type="varchar" MaxLength="60" />
+    <Property Name="productPrice" Type="int" />
+    <Property Name="productStock" Type="int" />
+    <Property Name="categoryId" Type="int" />
+    <Property Name="productImage" Type="varchar" MaxLength="120" />
+  </EntityType>
+  <EntityType Name="Tipos_Usuarios">
+    <Key>
+      <PropertyRef Name="userTypeId" />
+    </Key>
+    <Property Name="userTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userTypeDescription" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userName" Type="varchar" MaxLength="80" />
+    <Property Name="userEmail" Type="varchar" MaxLength="120" />
+    <Property Name="userPassword" Type="varchar" MaxLength="16" />
+    <Property Name="userTypeId" Type="int" />
+  </EntityType>
+  <Association Name="FK__Detalles__detail__1A14E395">
+    <End Role="Productos" Type="Self.Productos" Multiplicity="0..1" />
+    <End Role="Detalles" Type="Self.Detalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="productId" />
+      </Principal>
+      <Dependent Role="Detalles">
+        <PropertyRef Name="productId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Facturas__detail__1DE57479">
+    <End Role="Detalles" Type="Self.Detalles" Multiplicity="0..1" />
+    <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Detalles">
+        <PropertyRef Name="detailsId" />
+      </Principal>
+      <Dependent Role="Facturas">
+        <PropertyRef Name="detailsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Facturas__userId__1CF15040">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Facturas">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Productos__categ__173876EA">
+    <End Role="Categorias" Type="Self.Categorias" Multiplicity="0..1" />
+    <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorias">
+        <PropertyRef Name="categoryId" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="categoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Usuarios__userTy__1273C1CD">
+    <End Role="Tipos_Usuarios" Type="Self.Tipos_Usuarios" Multiplicity="0..1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipos_Usuarios">
+        <PropertyRef Name="userTypeId" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="userTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Proyecto_VerocoModelStoreContainer">
+    <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Detalles" EntityType="Self.Detalles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Facturas" EntityType="Self.Facturas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tipos_Usuarios" EntityType="Self.Tipos_Usuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Detalles__detail__1A14E395" Association="Self.FK__Detalles__detail__1A14E395">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="Detalles" EntitySet="Detalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Facturas__detail__1DE57479" Association="Self.FK__Facturas__detail__1DE57479">
+      <End Role="Detalles" EntitySet="Detalles" />
+      <End Role="Facturas" EntitySet="Facturas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Facturas__userId__1CF15040" Association="Self.FK__Facturas__userId__1CF15040">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Facturas" EntitySet="Facturas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Productos__categ__173876EA" Association="Self.FK__Productos__categ__173876EA">
+      <End Role="Categorias" EntitySet="Categorias" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Usuarios__userTy__1273C1CD" Association="Self.FK__Usuarios__userTy__1273C1CD">
+      <End Role="Tipos_Usuarios" EntitySet="Tipos_Usuarios" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

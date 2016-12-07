@@ -1,0 +1,10 @@
+C:\Users\Sky\Documents\GitHub\ProyectoFinal\Veroco_Api\ModeloVeroco\bin\Debug\ModeloVeroco.dll.config
+C:\Users\Sky\Documents\GitHub\ProyectoFinal\Veroco_Api\ModeloVeroco\bin\Debug\ModeloVeroco.dll
+C:\Users\Sky\Documents\GitHub\ProyectoFinal\Veroco_Api\ModeloVeroco\bin\Debug\ModeloVeroco.pdb
+C:\Users\Sky\Documents\GitHub\ProyectoFinal\Veroco_Api\ModeloVeroco\bin\Debug\EntityFramework.dll
+C:\Users\Sky\Documents\GitHub\ProyectoFinal\Veroco_Api\ModeloVeroco\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sky\Documents\GitHub\ProyectoFinal\Veroco_Api\ModeloVeroco\bin\Debug\EntityFramework.xml
+C:\Users\Sky\Documents\GitHub\ProyectoFinal\Veroco_Api\ModeloVeroco\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sky\Documents\GitHub\ProyectoFinal\Veroco_Api\ModeloVeroco\obj\Debug\ModeloVeroco.csprojResolveAssemblyReference.cache
+C:\Users\Sky\Documents\GitHub\ProyectoFinal\Veroco_Api\ModeloVeroco\obj\Debug\ModeloVeroco.dll
+C:\Users\Sky\Documents\GitHub\ProyectoFinal\Veroco_Api\ModeloVeroco\obj\Debug\ModeloVeroco.pdb
