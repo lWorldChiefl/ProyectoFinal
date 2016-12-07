@@ -1,0 +1,48 @@
+﻿@model IEnumerable<BusinessLayer.Usuario>
+
+@{
+    ViewBag.Title = "Usuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Usuarios</h2>
+
+<table class="table table-striped table-hover">
+    <tr class="info">
+        <th>
+            @Html.DisplayName("Usuario")
+        </th>
+        <th>
+            @Html.DisplayName("Email")
+        </th>
+        <th>
+            @Html.DisplayName("Contraseña")
+        </th>
+        <th>
+            @Html.DisplayName("Tipo de Usuario")
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.userName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.userEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.userPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipos_Usuarios.userTypeDescription)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Configurar", new { id = item.userId }) |
+                @Html.ActionLink("Eliminar", "Eliminar", new { id = item.userId })
+            </td>
+        </tr>
+    }
+
+</table>
