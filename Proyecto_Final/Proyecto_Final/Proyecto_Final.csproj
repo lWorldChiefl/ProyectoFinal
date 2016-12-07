@@ -222,6 +222,7 @@
     <Content Include="Views\Veroco\Login.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Account\Configurar.cshtml" />
+    <Content Include="Views\Account\Eliminar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

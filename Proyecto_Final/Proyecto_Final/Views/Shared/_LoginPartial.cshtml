@@ -1,31 +1,80 @@
 ﻿@using Microsoft.AspNet.Identity
-@if (Session["userId"] != null)
-{
-    
-    @Html.AntiForgeryToken()
-    <ul class="nav navbar-right">
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                @Session["userName"].ToString()
-                <span class="caret">
-                </span>
-            </a>
-            <ul class="dropdown-menu">
-                <li>
 
-                    @Html.ActionLink("Configurar", "Configurar", "Account", new { id = Session["userId"] }, htmlAttributes: new { title = "Index" })
-                </li>
-                <li>
-                    @Html.ActionLink("Cerrar Sesión", "LogOff", "Veroco", routeValues: null, htmlAttributes: new { title = "Cerrar Sesión" })
+@{
+    if (Session["userId"] != null)
+    {
+    
+        @Html.AntiForgeryToken()
+        if (Session["userTypeId"].ToString() == "1") //Administrador
+        {
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("Usuarios", "Usuarios", "Account")</li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        @Session["userName"].ToString()
+                        <span class="caret">
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            @Html.ActionLink("Configurar", "Configurar", "Account", new { id = Session["userId"] }, htmlAttributes: new { title = "Index" })
+                        </li>
+                        <li>
+                            @Html.ActionLink("Cerrar Sesión", "LogOff", "Veroco", routeValues: null, htmlAttributes: new { title = "Cerrar Sesión" })
+                        </li>
+                    </ul>
                 </li>
             </ul>
-        </li>
-    </ul>
-}
-else
-{
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Registrarse", "Registrarse", "Veroco", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Iniciar sesión", "Login", "Veroco", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
+        }
+        else if (Session["userTypeId"].ToString() == "2") //Cliente
+        {
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        @Session["userName"].ToString()
+                        <span class="caret">
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            @Html.ActionLink("Configurar", "Configurar", "Account", new { id = Session["userId"] }, htmlAttributes: new { title = "Index" })
+                        </li>
+                        <li>
+                            @Html.ActionLink("Cerrar Sesión", "LogOff", "Veroco", routeValues: null, htmlAttributes: new { title = "Cerrar Sesión" })
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        }
+        else //Gerente
+        {
+            <ul class="nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("Usuarios", "Usuarios", "Account")</li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        @Session["userName"].ToString()
+                        <span class="caret">
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            @Html.ActionLink("Configurar", "Configurar", "Account", new { id = Session["userId"] }, htmlAttributes: new { title = "Index" })
+                        </li>
+                        <li>
+                            @Html.ActionLink("Cerrar Sesión", "LogOff", "Veroco", routeValues: null, htmlAttributes: new { title = "Cerrar Sesión" })
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        }
+    }
+
+    else
+    {
+        <ul class="nav navbar-nav navbar-right">
+            <li>@Html.ActionLink("Registrarse", "Registrarse", "Veroco", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+            <li>@Html.ActionLink("Iniciar sesión", "Login", "Veroco", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        </ul>
+    }
 }

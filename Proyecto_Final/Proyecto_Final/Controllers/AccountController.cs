@@ -46,5 +46,29 @@ namespace Proyecto_Final.Controllers
             return View(usuario);
         }
 
+        public ActionResult Eliminar(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Usuario usuario = db.Usuarios.Find(id);
+            if (usuario == null)
+            {
+                return HttpNotFound();
+            }
+            return View(usuario);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult Eliminar(int id)
+        {
+            Usuario usuario = db.Usuarios.Find(id);
+            userRe.Eliminar(usuario);
+            return RedirectToAction("Index");
+        }
+
+
+
     }
 }
