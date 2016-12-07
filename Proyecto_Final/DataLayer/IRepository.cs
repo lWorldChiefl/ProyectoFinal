@@ -63,4 +63,50 @@ namespace BusinessLayer
     }
 
 
+    public class ProductosRepository : IRepository<Producto>
+    {
+
+        Proyecto_VerocoEntities _userContext;
+
+        public ProductosRepository()
+        {
+            _userContext = new Proyecto_VerocoEntities();
+
+        }
+        public IEnumerable<Producto> Listar
+        {
+            get
+            {
+                return _userContext.Productos;
+            }
+
+        }
+
+        public void Crear(Producto entity)
+        {
+            _userContext.Productos.Add(entity);
+            _userContext.SaveChanges();
+        }
+
+        public void Eliminar(Producto entity)
+        {
+            _userContext.Productos.Remove(entity);
+            _userContext.SaveChanges();
+        }
+
+        public void Actualizar(Producto entity)
+        {
+            _userContext.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+            _userContext.SaveChanges();
+        }
+
+        public Producto Buscar(int Id)
+        {
+            var result = (from r in _userContext.Productos where r.productId == Id select r).FirstOrDefault();
+            return result;
+        }
+
+    }
+
+
 }
