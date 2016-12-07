@@ -1,0 +1,75 @@
+﻿@model Proyecto_Final.Models.ImagenCompleta
+
+@{
+    ViewBag.Title = "Crear";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Crear</h2>
+
+<form action="" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Producto</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.Label("Nombre", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Producto.productName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Producto.productName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Precio", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Producto.productPrice, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Producto.productPrice)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Stock", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Producto.productStock, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Producto.productStock)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Categoria", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Producto.categoryId, new SelectList(
+                  new List<Object>{
+                       new { value = 1 , text = "Frutas y Verduras"  },
+                       new { value = 2 , text = "Carniceria" },
+                       new { value = 3 , text = "Farmacia"},
+                       new { value = 4 , text = "Ropa"},
+                       new { value = 5 , text = "Alimentos y Bebidas"}
+                    },
+                  "value",
+                  "text",
+                   1), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Producto.categoryId)
+            </div>
+        </div>
+
+        @Html.HiddenFor(model => model.Producto.productImage)
+
+        <div class="form-group">
+            @Html.Label("Imagen", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Imagen.ImageUpload, new { type = "file" })
+                @Html.ValidationMessageFor(model => model.Imagen.ImageUpload)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Crear" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+</form>

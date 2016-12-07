@@ -168,6 +168,8 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Imagen.cs" />
+    <Compile Include="Models\ImagenCompleta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -228,6 +230,7 @@
     <Content Include="Views\Account\Eliminar.cshtml" />
     <Content Include="Views\Account\Usuarios.cshtml" />
     <Content Include="Views\Productos\Productos.cshtml" />
+    <Content Include="Views\Productos\Crear.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
