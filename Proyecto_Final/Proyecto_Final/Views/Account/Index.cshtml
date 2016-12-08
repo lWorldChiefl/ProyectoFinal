@@ -23,8 +23,8 @@
                     var productName = val.productName;
                     var productPrice = val.productPrice;
                     var productStock = val.productPrice;
-                    @**@var urlcompleta = "@Url.Content(testVar)"*@
-                    ulEmployees.append('<div> ' + productName+ ' ' + productPrice+ ' ' + productStock+ '</div>');
+                    var productImage = val.productImage.substring(1);
+                    ulEmployees.append('<li><img src="' + productImage + '" style="height:200px;width:200px alt" ' + productName + ' ' + productPrice + ' ' + productStock + ' ' + productImage + '">              ' + productName + ' ' + productPrice + ' ' + productStock + '</li>');
                 });
             }
         });
@@ -37,8 +37,7 @@
 
 <div class="container">
     <h2 class="text-center">Productos</h2>
-    <div class="lightbox-gallery">
-        <ul id="ulEmployees" />
-        
+    <div class="Wrapper">
+        <ul id="ulEmployees">
     </div>
 </div>
