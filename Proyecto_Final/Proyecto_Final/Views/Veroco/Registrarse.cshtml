@@ -42,15 +42,7 @@
         <div class="form-group">
             @Html.Label("Tipo de Usuario", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.userTypeId, new SelectList(
-                  new List<Object>{
-                       new { value = 1 , text = "Administrador"  },
-                       new { value = 2 , text = "Cliente" },
-                       new { value = 3 , text = "Gerente"}
-                    },
-                  "value",
-                  "text",
-                   2), new { @class = "form-control" })
+                @Html.DropDownListFor(x => x.userTypeId, (IEnumerable<SelectListItem>)ViewBag.tipo_id, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.userTypeId)
             </div>
         </div>

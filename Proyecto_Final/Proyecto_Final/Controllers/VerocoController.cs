@@ -53,6 +53,7 @@ namespace Proyecto_Final.Controllers
 
         public ActionResult Registrarse()
         {
+            ViewBag.tipo_id = new SelectList(db.Tipos_Usuarios, "userTypeId", "userTypeDescription",1);
             return View();
         }
 
