@@ -25,12 +25,15 @@ namespace Proyecto_Final.Controllers
 
         public ActionResult Crear()
         {
+            ViewBag.Categoria = new SelectList(db.Categorias, "categoryId", "categoryName", 1);
             return View();
         }
 
         [HttpPost]
         public ActionResult Crear(ImagenCompleta ImagenCompleta)
         {
+            ViewBag.Categoria = new SelectList(db.Categorias, "categoryId", "categoryName", 1);
+
             var validImageTypes = new string[]
             {
                 "image/gif",

@@ -60,10 +60,11 @@ namespace Proyecto_Final.Controllers
         [HttpPost]
         public ActionResult Registrarse(Usuario user)
         {
+            ViewBag.Message = user.userName + " registrado satisfactoriamente";
+            ViewBag.tipo_id = new SelectList(db.Tipos_Usuarios, "userTypeId", "userTypeDescription", 1);
             userRe.Crear(user);
             ModelState.Clear();
-            ViewBag.Message = user.userName + " registrado satisfactoriamente";
-            return View();
+            return Redirect("Login");
         }
     }
 }
