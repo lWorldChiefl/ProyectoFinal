@@ -13,6 +13,7 @@ namespace Proyecto_Final.Controllers
     {
         private Proyecto_VerocoEntities db = new Proyecto_VerocoEntities();
         UsuariosRepository userRe = new UsuariosRepository();
+        CategoriasRepository categoryRe = new CategoriasRepository();
 
         // GET: Account
         public ActionResult Index()
@@ -80,6 +81,50 @@ namespace Proyecto_Final.Controllers
             {
                 return View(usuariosGerente.ToList());
             }
+        }
+
+        [HttpGet]
+        public ActionResult Categorias()
+        {
+            var categoryDatos = categoryRe.Listar;
+            return View(categoryDatos);
+        }
+
+        public ActionResult CrearCategorias()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CrearCategorias(Categoria category)
+        {
+            categoryRe.Crear(category);
+            return RedirectToAction("Categorias");
+        }
+
+        public ActionResult EditarCategorias(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Categoria categoria = db.Categorias.Find(id);
+            if (categoria == null)
+            {
+                return HttpNotFound();
+            }
+            return View(categoria);
+        }
+
+        [HttpPost]
+        public ActionResult EditarCategorias(Categoria category)
+        {
+            if (ModelState.IsValid)
+            {
+                categoryRe.Actualizar(category);
+                return RedirectToAction("Categorias");
+            }
+            return View(category);
         }
 
 

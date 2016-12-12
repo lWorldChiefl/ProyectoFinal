@@ -50,17 +50,7 @@
         <div class="form-group">
             @Html.Label("Categoria", "categoryId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.categoryId, new SelectList(
-                  new List<Object>{
-                       new { value = 1 , text = "Frutas y Verduras"  },
-                       new { value = 2 , text = "Carniceria" },
-                       new { value = 3 , text = "Farmacia"},
-                       new { value = 4 , text = "Ropa"},
-                       new { value = 5 , text = "Alimentos y Bebidas"}
-                    },
-                  "value",
-                  "text",
-                   1), new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.categoryId, (IEnumerable<SelectListItem>)ViewBag.Categoria, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.categoryId)
             </div>
         </div>

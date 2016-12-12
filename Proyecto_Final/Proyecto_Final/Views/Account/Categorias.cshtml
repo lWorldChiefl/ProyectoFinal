@@ -1,0 +1,39 @@
+﻿@model IEnumerable<BusinessLayer.Categoria>
+
+@{
+    ViewBag.Title = "Categorias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Categorias</h2>
+
+<p>
+    @Html.ActionLink("Crear", "CrearCategorias",null, new { @class="btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Categoria")
+        </th>
+        <th>
+            @Html.DisplayName("Descripción")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.categoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.categoryDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "EditarCategorias", new { id=item.categoryId }) |
+            @Html.ActionLink("Eliminar", "EliminarCategorias", new { id=item.categoryId })
+        </td>
+    </tr>
+}
+
+</table>

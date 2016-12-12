@@ -225,6 +225,9 @@
     <Content Include="Views\Productos\Crear.cshtml" />
     <Content Include="Views\Productos\Editar.cshtml" />
     <Content Include="Views\Productos\Eliminar.cshtml" />
+    <Content Include="Views\Account\Categorias.cshtml" />
+    <Content Include="Views\Account\CrearCategorias.cshtml" />
+    <Content Include="Views\Account\EditarCategorias.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

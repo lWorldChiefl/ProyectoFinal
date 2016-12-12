@@ -1,0 +1,41 @@
+﻿@model BusinessLayer.Categoria
+
+@{
+    ViewBag.Title = "CrearCategorias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CrearCategorias</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Categoria</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.Label("Nombre", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.categoryName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.categoryName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Descripción", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.categoryDescription, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.categoryDescription)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Crear" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+

@@ -58,6 +58,7 @@ namespace Proyecto_Final.Controllers
 
         public ActionResult Editar(int? id)
         {
+            ViewBag.Categoria = new SelectList(db.Categorias, "categoryId", "categoryName", 1);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -73,6 +74,7 @@ namespace Proyecto_Final.Controllers
         [HttpPost]
         public ActionResult Editar(Producto producto)
         {
+            ViewBag.Categoria = new SelectList(db.Categorias, "categoryId", "categoryName", 1);
             if (ModelState.IsValid)
             {
                 proRe.Actualizar(producto);

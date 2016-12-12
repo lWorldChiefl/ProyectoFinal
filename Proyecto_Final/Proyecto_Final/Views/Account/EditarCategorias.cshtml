@@ -1,0 +1,42 @@
+﻿@model BusinessLayer.Categoria
+
+@{
+    ViewBag.Title = "EditarCategorias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EditarCategorias</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Categoria</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.categoryId)
+
+        <div class="form-group">
+            @Html.Label("Nombre", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.categoryName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.categoryName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Descripción", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.categoryDescription,10,20, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.categoryDescription)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
