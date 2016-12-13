@@ -1,0 +1,40 @@
+﻿@model BusinessLayer.Categoria
+
+@{
+    ViewBag.Title = "EliminarCategorias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EliminarCategorias</h2>
+
+<h3>Estas seguro de eliminar?</h3>
+<div>
+    <h4>Categoria</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Nombre")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Descripción")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categoryDescription)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-danger" />
+        </div>
+    }
+</div>

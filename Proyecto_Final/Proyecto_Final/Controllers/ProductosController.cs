@@ -97,11 +97,12 @@ namespace Proyecto_Final.Controllers
             return View(producto);
         }
 
-        [HttpPost, ActionName("Delete")]
-        public ActionResult Eliminar(int id)
+        [HttpPost, ActionName("Eliminar")]
+        public ActionResult EliminarProductos(int id)
         {
             Producto producto = db.Productos.Find(id);
-            proRe.Eliminar(producto);
+            db.Productos.Remove(producto);
+            db.SaveChanges();
             return RedirectToAction("Productos");
         }
     }

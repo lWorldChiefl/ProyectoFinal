@@ -228,6 +228,7 @@
     <Content Include="Views\Account\Categorias.cshtml" />
     <Content Include="Views\Account\CrearCategorias.cshtml" />
     <Content Include="Views\Account\EditarCategorias.cshtml" />
+    <Content Include="Views\Account\EliminarCategorias.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

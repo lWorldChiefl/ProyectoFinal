@@ -61,7 +61,7 @@ namespace Proyecto_Final.Controllers
             return View(usuario);
         }
 
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("Eliminar")]
         public ActionResult Eliminar(int id)
         {
             Usuario usuario = db.Usuarios.Find(id);
@@ -126,6 +126,30 @@ namespace Proyecto_Final.Controllers
             }
             return View(category);
         }
+
+        public ActionResult EliminarCategorias(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Categoria categoria = db.Categorias.Find(id);
+            if (categoria == null)
+            {
+                return HttpNotFound();
+            }
+            return View(categoria);
+        }
+
+        [HttpPost, ActionName("EliminarCategorias")]
+        public ActionResult EliminarCategorias(int id)
+        {
+            Categoria categoria = db.Categorias.Find(id);
+            db.Categorias.Remove(categoria);
+            db.SaveChanges();
+            return RedirectToAction("Categorias");
+        }
+
 
 
     }
