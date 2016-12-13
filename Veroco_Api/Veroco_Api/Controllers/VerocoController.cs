@@ -31,5 +31,15 @@ namespace Veroco_Api.Controllers
                 }
             }
         }
+
+        [HttpPost]
+        public HttpResponseMessage Post([FromUri]int id, IEnumerable<Detalle> detalle)
+        {
+            using (Proyecto_VerocoEntities entities = new Proyecto_VerocoEntities())
+            {
+
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+        }
     }
 }

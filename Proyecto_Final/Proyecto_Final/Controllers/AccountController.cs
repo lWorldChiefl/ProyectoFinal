@@ -14,6 +14,7 @@ namespace Proyecto_Final.Controllers
         private Proyecto_VerocoEntities db = new Proyecto_VerocoEntities();
         UsuariosRepository userRe = new UsuariosRepository();
         CategoriasRepository categoryRe = new CategoriasRepository();
+        TiposUsuariosRepository typeUsersRe = new TiposUsuariosRepository();
 
         // GET: Account
         public ActionResult Index()
@@ -150,7 +151,74 @@ namespace Proyecto_Final.Controllers
             return RedirectToAction("Categorias");
         }
 
+        /*                      Tipos de Usuarios                  */
 
+        [HttpGet]
+        public ActionResult Tipos_Usuarios()
+        {
+            var typeDatos = typeUsersRe.Listar;
+            return View(typeDatos);
+        }
+
+        public ActionResult CrearTiposUsuarios()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CrearTiposUsuarios(Tipos_Usuarios category)
+        {
+            typeUsersRe.Crear(category);
+            return RedirectToAction("Tipos_Usuarios");
+        }
+
+        public ActionResult EditarTiposUsuarios(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Tipos_Usuarios tiposUsuarios = db.Tipos_Usuarios.Find(id);
+            if (tiposUsuarios == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tiposUsuarios);
+        }
+
+        [HttpPost]
+        public ActionResult EditarTiposUsuarios(Tipos_Usuarios category)
+        {
+            if (ModelState.IsValid)
+            {
+                typeUsersRe.Actualizar(category);
+                return RedirectToAction("Tipos_Usuarios");
+            }
+            return View(category);
+        }
+
+        public ActionResult EliminarTiposUsuarios(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Tipos_Usuarios tiposUsuarios = db.Tipos_Usuarios.Find(id);
+            if (tiposUsuarios == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tiposUsuarios);
+        }
+
+        [HttpPost, ActionName("EliminarTiposUsuarios")]
+        public ActionResult EliminarTiposUsuarios(int id)
+        {
+            Tipos_Usuarios tiposUsuarios = db.Tipos_Usuarios.Find(id);
+            db.Tipos_Usuarios.Remove(tiposUsuarios);
+            db.SaveChanges();
+            return RedirectToAction("Tipos_Usuarios");
+        }
 
     }
 }

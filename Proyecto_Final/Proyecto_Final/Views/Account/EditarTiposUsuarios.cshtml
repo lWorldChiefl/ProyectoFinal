@@ -1,0 +1,34 @@
+﻿@model BusinessLayer.Tipos_Usuarios
+
+@{
+    ViewBag.Title = "EditarTiposUsuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Editar Tipos de Usuarios</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Tipos de Usuarios</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.userTypeId)
+
+        <div class="form-group">
+            @Html.Label("Nombre", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.userTypeDescription)
+                @Html.ValidationMessageFor(model => model.userTypeDescription)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

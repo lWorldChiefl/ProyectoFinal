@@ -229,6 +229,10 @@
     <Content Include="Views\Account\CrearCategorias.cshtml" />
     <Content Include="Views\Account\EditarCategorias.cshtml" />
     <Content Include="Views\Account\EliminarCategorias.cshtml" />
+    <Content Include="Views\Account\Tipos_Usuarios.cshtml" />
+    <Content Include="Views\Account\CrearTiposUsuarios.cshtml" />
+    <Content Include="Views\Account\EditarTiposUsuarios.cshtml" />
+    <Content Include="Views\Account\EliminarTiposUsuarios.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -5,14 +5,12 @@
 }
 
 @Html.AntiForgeryToken()
-
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <h2>Index</h2>
 
-@section Scripts {
-    <script type="text/javaScript">
-    var testVar = "test";
+<script>
     $(document).ready(function () {
-        var ulEmployees = $('#ulEmployees');
+        var ulEmployees = $('#products');
         $.ajax({
             type: 'GET',
             url: "http://localhost:80/Api/Veroco/",
@@ -20,24 +18,69 @@
             success: function (data) {
                 ulEmployees.empty();
                 $.each(data, function (index, val) {
+                    var productId = val.productId;
                     var productName = val.productName;
                     var productPrice = val.productPrice;
-                    var productStock = val.productPrice;
+                    var productStock = val.productStock;
                     var productImage = val.productImage.substring(1);
-                    ulEmployees.append('<li><img src="' + productImage + '" style="height:200px;width:200px alt" ' + productName + ' ' + productPrice + ' ' + productStock + ' ' + productImage + '">              ' + productName + ' ' + productPrice + ' ' + productStock + '</li>');
+                    ulEmployees.append('<tr id ="productos"><td id="Id">' + productId + '</td><td id="nombre">' + productName + '</td><td id="precio">' + productPrice + '</td><td id="stock">' + productStock + '</td><td id="imagen"><img src="' + productImage + '" style="height:200px;width:200px alt" ' + productName + ' ' + productPrice + ' ' + productStock + ' ' + productImage + '"> </td> <td> <input type="text" id="compra" value="0"> </td>  </tr>');
                 });
             }
         });
     });
+
+    function grabaTodoTabla(TABLAID) {
+        var DATA = [];
+        var TABLA = $("#" + TABLAID + " tbody > tr");
+        var Datos = {};
+
+        TABLA.each(function () {
+            var ID = $(this).find("td[id='Id']").text(),
+			PRECIO = $(this).find("td[id='precio']").text(),
+			CANTIDAD = $(this).find("input[id*='compra']").val();
+
+            var productos = {};
+
+            if (CANTIDAD !== '0') {
+                productos["detailsId"] = 0;
+                productos["productId"] = ID;
+                productos['detailsQuantity'] = CANTIDAD;
+                productos["detailsPrice"] = PRECIO;
+                DATA.push(productos);
+            }
+        });
+
+        var aInfo = JSON.stringify(DATA);
+
+        var Id = @Session["userId"].ToString();
+
+        $.ajax({
+            data: aInfo,
+            type: 'POST',
+            url: 'http://localhost:33077/Api/Veroco/' + Id,
+            contentType: "application/json",
+            dataType: "json",
+            async: true,
+            success: function (r) {
+                //Una vez que se haya ejecutado de forma exitosa hacer el código para que muestre esto mismo.
+                console.log("Bien");
+            }
+        });
+    }
+
 </script>
-
-}
-
-
 
 <div class="container">
     <h2 class="text-center">Productos</h2>
-    <div class="Wrapper">
-        <ul id="ulEmployees">
+    <table class="table table-striped table-hover" id="info">
+        <tbody id="products">
+
+        </tbody>
+    </table>
+    <div class="btn_save">
+        <button class="btn btn-primary" onclick="grabaTodoTabla('info');" title="Comprar">
+            Comprar
+        </button>
     </div>
 </div>
+

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<BusinessLayer.Tipos_Usuarios>
+
+@{
+    ViewBag.Title = "Tipos_Usuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tipos de Usuarios</h2>
+
+<p>
+    @Html.ActionLink("Crear", "CrearTiposUsuarios", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Tipo de Usuario")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.userTypeDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "EditarTiposUsuarios", new { id = item.userTypeId }) |
+            @Html.ActionLink("Borrar", "EliminarTiposUsuarios", new { id = item.userTypeId })
+        </td>
+    </tr>
+}
+
+</table>

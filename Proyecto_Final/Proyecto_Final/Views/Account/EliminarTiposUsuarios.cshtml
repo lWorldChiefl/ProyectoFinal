@@ -1,0 +1,32 @@
+﻿@model BusinessLayer.Tipos_Usuarios
+
+@{
+    ViewBag.Title = "EliminarTiposUsuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EliminarTiposUsuarios</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Tipos_Usuarios</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Nombre")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userTypeDescription)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        </div>
+    }
+</div>

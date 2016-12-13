@@ -63,6 +63,7 @@
     <Compile Include="CategoriasRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TiposUsuariosRepository.cs" />
     <Compile Include="VerocoModelo.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
