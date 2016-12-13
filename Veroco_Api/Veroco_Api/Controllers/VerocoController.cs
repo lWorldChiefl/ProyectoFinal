@@ -37,7 +37,21 @@ namespace Veroco_Api.Controllers
         {
             using (Proyecto_VerocoEntities entities = new Proyecto_VerocoEntities())
             {
+                var valor = entities.Facturas.Where(e => e.detailsId == id);
+                Factura factura = new Factura();
 
+                factura.invoiceDate = DateTime.Now;
+                factura.detailsId = id;
+                factura.userId = id;
+
+                entities.Facturas.Add(factura);
+
+                foreach (var model in detalle)
+                {
+                    model.detailsId = factura.detailsId ?? default(int);
+                    entities.Detalles.Add(model);
+                }
+                entities.SaveChanges();
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
         }
